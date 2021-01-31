@@ -30,8 +30,8 @@ from textblob import TextBlob
 
 # polarity项为文本积极性，是在[-1.0，1.0]范围内的浮点数
 # subjectivity项为主观评分，是在[0.0，1.0]范围内的浮点数，其中0.0是非常客观的，而1.0是非常主观的
-comm_data['polarity'] = 0
-comm_data['subjectivity'] = 0
+comm_data.insert(comm_data.shape[1], 'polarity', 0)
+comm_data.insert(comm_data.shape[1], 'subjectivity', 0)
 
 for i in range(0, data.shape[0]):
     blob = TextBlob(data[6][i])
